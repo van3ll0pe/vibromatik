@@ -1,0 +1,27 @@
+#ifndef __PERIPHERALS_H__
+#define __PERIPHERALS_H__
+
+#define PERIPHERALS_BASE 0x60000000
+
+#define UART_CONTROLLER_0_BASE              (PERIPHERALS_BASE + 0)
+#define SPI_CONTROLLER_1_BASE               (PERIPHERALS_BASE + 0x2000)
+#define SPI_CONTROLLER_0_BASE               (PERIPHERALS_BASE + 0x3000)
+#define GPIO_BASE                           (PERIPHERALS_BASE + 0x4000)
+#define IO_MUX_BASE                         (PERIPHERALS_BASE + 0x9000)
+#define UART_CONTROLLER_1_BASE              (PERIPHERALS_BASE + 0x10000)
+#define I2C_CONTROLLER_BASE                 (PERIPHERALS_BASE + 0x13000)
+#define UHCIO_BASE                          (PERIPHERALS_BASE + 0x14000)
+#define REMOTE_CONTROLLER_PERIPHERAL_BASE   (PERIPHERALS_BASE + 0x16000)
+#define LED_PWM_CONTROLLER_BASE             (PERIPHERALS_BASE + 0x19000)
+#define TIMER_GROUP_0_BASE                  (PERIPHERALS_BASE + 0x1F000)
+#define TIMER_GROUP_1_BASE                  (PERIPHERALS_BASE + 0x20000)
+#define SYSTEM_TIMER_BASE                   (PERIPHERALS_BASE + 0x23000)
+#define SPI_CONTROLLER_2_BASE               (PERIPHERALS_BASE + 0x24000)
+#define SYSCON_BASE                         (PERIPHERALS_BASE + 0x26000)
+#define I2S_CONTROLLER_BASE                 (PERIPHERALS_BASE + 0x2D000)
+#define ADC_CONTROLLER_BASE                 (PERIPHERALS_BASE + 0x40000)
+#define USB_SERIAL_JTAG_BASE                (PERIPHERALS_BASE + 0x43000)
+#define SYSTEM_REGISTERS_BASE               (PERIPHERALS_BASE + 0xC0000)
+#define INTERRUPT_MATRIX_BASE               (PERIPHERALS_BASE + 0xC2000)
+
+#endif //__PERIPHERALS_H__
