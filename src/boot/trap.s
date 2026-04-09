@@ -79,13 +79,20 @@
     mret
 .endm
 
+.globl enable_global_interrupt
+enable_global_interrupt:
+    csrrsi x0, mstatus, 8
+    ret
+
+.globl disable_global_interrupt
+disable_global_interrupt:
+    csrrci x0, mstatus, 8
+    ret 
 
 .globl trap_init
 trap_init:
     la t0, vector_trap
     csrrw x0, mtvec, t0 #mtvec is set to vector_trap
-    li t0, 8
-    csrrs x0, mstatus, t0 #enable global interruption
     ret
 
 call_handler_interrupt:

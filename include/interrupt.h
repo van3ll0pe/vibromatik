@@ -3,6 +3,11 @@
 
 #include "peripherals.h"
 
+typedef void (*ptf)();
+
+extern ptf interrupt_handler_vector[32];
+
+
 //INTERRUPT SOURCE
 #define INTERRUPT_CORE0_GPIO_INTERRUPT_PRO_MAP_REG  (INTERRUPT_MATRIX_BASE + 0x0040)    //INTERRUPT FOR GPIO  (RW)
 #define INTERRUPT_CORE0_TG_T0_INT_MAP_REG           (INTERRUPT_MATRIX_BASE + 0x80)      //INTERRUPT FOR TIMER GROUP
@@ -22,14 +27,18 @@
 #define INTERRUPT_CORE0_CPU_INT_EIP_STATUS_REG  (INTERRUPT_MATRIX_BASE + 0x110)
 #define INTERRUPT_CORE0_CPU_INT_PRI_n_REG (n)   (INTERRUPT_MATRIX_BASE + (0x118 + (n * 0x4)))
 #define INTERRUPT_CORE0_CPU_INT_THRESH_REG  (INTERRUPT_MATRIX_BASE + 0x194)
+
+
 /**
  * @brief Enable global trap in the CPU
  * and set the vector trap handler in Mvtec
  * This function is only called in the boot
  */
 void trap_init();
+void enable_global_interrupt();
+void disable_global_interrupt();
 
-void interrupt_init();
+void interrupt_setup();
 void handler_interrupt(unsigned int mcause);
 
 #endif //__INTERRUPT_H__
